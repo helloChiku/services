@@ -13,7 +13,7 @@
   
   "scripts": {
   
-  "work-spaces": "concurrently \"npm run server-install\" \"npm run client-install\"",
+  "work-spaces": "concurrently \"npm i\" \"npm run server-install\" \"npm run client-install\"",
    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm run dev",
