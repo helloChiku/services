@@ -1,5 +1,5 @@
 import express from 'express';
-//import cors from 'cors';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import mongoSanitize from 'express-mongo-sanitize';
@@ -25,7 +25,14 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again later.'
 });
 
-
+app.use(
+  cors({
+    origin: '*', // or '*' for all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+);
 // Manual CORS handler
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // or restrict to a specific origin
