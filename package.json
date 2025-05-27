@@ -13,13 +13,12 @@
   
   "scripts": {
   
-  "work-spaces": "concurrently \"npm i\" \"npm run server-install\" \"npm run client-install\"",
-   "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm run dev",
-    "client": "cd frontend && npm run dev",
-
-    "server-install": "cd backend && npm i",
-    "client-install": "cd frontend && npm i",
+ "install-all": "npm install && npm run server-install && npm run client-install",
+  "server-install": "cd backend && npm install",
+  "client-install": "cd frontend && npm install",
+  "start": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "cd backend && npm run dev",
+  "client": "cd frontend && npm run dev",
   "test": "echo \"Error: no test specified\" && exit 1"
   
   },
